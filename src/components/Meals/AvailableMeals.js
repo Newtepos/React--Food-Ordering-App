@@ -6,7 +6,7 @@ import classes from "./AvailableMeals.module.css";
 
 const initialSetup = {
   method: "get",
-  url: "https://react-http-efc44-default-rtdb.asia-southeast1.firebasedatabase.app/meals.jsonv",
+  url: "https://react-http-efc44-default-rtdb.asia-southeast1.firebasedatabase.app/meals.json",
 };
 
 const AvailableMeals = () => {
@@ -18,7 +18,8 @@ const AvailableMeals = () => {
   } = useRequest();
 
   useEffect(() => {
-      sendRequest(initialSetup);
+    sendRequest(initialSetup);
+    console.log(meals);
   }, []);
 
   const mealsList = meals.map((meal) => (
